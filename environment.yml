@@ -13,7 +13,22 @@ dependencies:
   - vs2015_runtime=14.27.29016=h5e58377_2
   - wheel=0.37.1=pyhd3eb1b0_0
   - wincertstore=0.2=py39haa95532_2
-  - pip
   - pip:
-      - pip==22.0.4
+    - atomicwrites==1.4.0
+    - attrs==21.4.0
+    - colorama==0.4.4
+    - coverage==6.3.2
+    - flake8==4.0.1
+    - iniconfig==1.1.1
+    - mccabe==0.6.1
+    - packaging==21.3
+    - pip==22.0.4
+    - pluggy==1.0.0
+    - py==1.11.0
+    - pycodestyle==2.8.0
+    - pyflakes==2.4.0
+    - pyparsing==3.0.7
+    - pytest==7.1.1
+    - pytest-cov==3.0.0
+    - tomli==2.0.1
 prefix: C:\Users\zeineddine\anaconda3\envs\calculator
