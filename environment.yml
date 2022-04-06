@@ -1,0 +1,4 @@
+name: mazerunner
+channels:
+  - defaults
+prefix: C:\Users\zeineddine\anaconda3\envs\mazerunner
