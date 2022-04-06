@@ -19,13 +19,3 @@ jobs:
             conda activate calculator
             flake8 --statistics
             pytest -v --cov
-
-# Orchestrate our job run sequence
-workflows:
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-
