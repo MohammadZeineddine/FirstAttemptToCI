@@ -24,3 +24,35 @@ jobs:
             conda activate calculator
             flake8 --statistics
             pytest -v --cov
+            
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  build:
+    docker:
+      - image: cimg/miniconda3
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: |
+            conda env create -n calculator
+            pip install -r requirements.txt
+      - run:
+          name: run tests
+          command: |
+            source activate calculator
+            conda activate calculator
+            flake8 --statistics
+            pytest -v --cov
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+
