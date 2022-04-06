@@ -1,21 +1,26 @@
-version: 2.1
-
-# Define the jobs we want to run for this project
+# Python CircleCI 2.0 configuration file
+version: 2
 jobs:
   build:
     docker:
-      - image: cimg/miniconda3
+      - image: continuumio/miniconda3
+
+    working_directory: ~/repo
+
     steps:
+      # Step 1: obtain repo from GitHub
       - checkout
+      # Step 2: create virtual env and install dependencies
       - run:
           name: install dependencies
           command: |
-            conda env create -n calculator
-            pip install -r requirements.txt
+            conda env create -f environment.yml
+
+      # Step 3: run linter and tests
       - run:
           name: run tests
           command: |
-            source activate calculator
+            conda init bash
             conda activate calculator
             flake8 --statistics
             pytest -v --cov
