@@ -6,9 +6,6 @@ dependencies:
   - wheel=0.37.1=pyhd3eb1b0_0
   - pip
   - pip:
-      - ca-certificates
-      - certifi
-      - openssl
       - python==3.9.12
       - setuptools==58.0.4
       - sqlite==3.38.2
